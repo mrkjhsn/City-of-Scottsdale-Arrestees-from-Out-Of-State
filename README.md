@@ -1,4 +1,4 @@
-# Out of State City of Scottsdale Arrestees
+## City of Scottsdale Arrestees from Other States
 
 While exploring the City of Scottsdale Police Department [arrest dataset](http://data.scottsdaleaz.gov/dataset/police-departmental-arrest-data) I noticed the City, State, and Zip are included for each person arrested.  This motivated me to analyze the relationship between out of state arrestees in Scottsdale versus the percent of visitors to Scottsdale from various states.  
 
