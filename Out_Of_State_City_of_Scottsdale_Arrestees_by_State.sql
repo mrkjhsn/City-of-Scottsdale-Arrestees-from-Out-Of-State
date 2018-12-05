@@ -1,7 +1,8 @@
+--create temp table that:
+-- 1) extracts two digit State of arrestee from the "City of Arrestee" field which includes City, State, Zip and
+-- 2) excludes all arrestees who are residens of Arizona and
+-- 3) excludes all records not in the standard City, State, Zip format
 
---create temp table that 1) extracts two digit State of arrestee from the "City of Arrestee" field 
---which includes City, State, Zip and 2) excludes all arrestees who are residens of Arizona and
---3) excludes all records not in the standard City, State, Zip format
 select  
 	SUBSTRING(
 		[City of Arrestee]
@@ -20,7 +21,7 @@ group by SUBSTRING(
 	)
 	
 
---temp table above is used to find the percent of total arrestees from each state
+--temp table above is used to find the percent of total arrestees in Scottsdale from non-AZ states
 select  
 	A.State_of_Arrestee
 	,A._Count_
@@ -44,4 +45,4 @@ group by A.[State_of_Arrestee]
 			,2
 		)
 	)
-order by A._Count_ desc	
+order by A._Count_ desc
