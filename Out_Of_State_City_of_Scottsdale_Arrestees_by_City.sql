@@ -3,32 +3,29 @@
 -- 2) excludes all arrestees who are residens of Arizona and
 -- 3) excludes all records not in the standard City, State, Zip format
 
-select  
-	case when [City of Arrestee] like '%[0-9][0-9][0-9][0-9][0-9]%' 
-		then left([City of Arrestee], len([City of Arrestee]) -6)
-	end as City_of_Arrestee
-	,count(*) as _Count_
+
+select count([Arrest Date]) as _Count_
+	,[City of Arrestee]
 into #City_of_Arrestee
-from [dbo].[spd_PDArrests$]
-where [City of Arrestee] not like '%, AZ %' and --AZ arrestees excluded
-	  [City of Arrestee] not like '%Glendale%' and
-	  [City of Arrestee] not like '%Phoenix%' and
-	  [City of Arrestee] not like ',%' and
-	  [City of Arrestee] is not null  --not sure why 27 null values are still being returned
-group by 
-	case when [City of Arrestee] like '%[0-9][0-9][0-9][0-9][0-9]%' 
-		then left([City of Arrestee], len([City of Arrestee]) -6)
-	end
+from
+		(select     -- my first opportunity to use "case when"
+			case when [City of Arrestee] like '%[0-9][0-9][0-9][0-9][0-9]%' --since not all "City of Arrestees" had 5 digit zip I wanted to select these, then strip out the 5 zip so I could group on just the city
+				then left([City of Arrestee], len([City of Arrestee]) -6)
+			end as [City of Arrestee]
+		,[Arrest Date]
+		from [dbo].[spd_PDArrests$]
+		where [City of Arrestee] not like '%, AZ %' and --AZ arrestees excluded
+			  [City of Arrestee] not like '%Glendale%' and --strips out "City of Arrestee" values that only include "Glendale" without AZ at end
+			  [City of Arrestee] not like '%Phoenix%' and  --strips out "City of Arrestee" values that only include "Phoenix" without AZ at end
+			  [City of Arrestee] not like ',%' --strips out "City of Arrestee" values that only include "," without AZ at end
+		) as A
+where [City of Arrestee] is not null  --originally I had this included within the "from" statement above, but that wasn't excluding nulls since it was checking against a calculated field
+group by [City of Arrestee]
 	
- select * from #City_of_Arrestee
- order by _Count_ desc
-
- drop table #City_of_Arrestee
-
 
 --temp table above is used to find the percent of total arrestees in Scottsdale from non-AZ cities
 select  
-	A.City_of_Arrestee
+	A.[City of Arrestee]
 	,A._Count_
 	,B._Total_
 	,convert(varchar,
@@ -38,16 +35,8 @@ select
 		)
 	)  + '%' as _Percent_
 from #City_of_Arrestee as A
-cross join (select sum(_Count_) as _Total_
+cross join (
+			select sum(_Count_) as _Total_
 			from #City_of_Arrestee
 			) as B
-group by A.City_of_Arrestee
-		,A._Count_
-		,B._Total_
-		,convert(varchar,
-		round(
-			convert(float,A._Count_)/convert(float,B._Total_)*100
-			,2
-		)
-	)
 order by A._Count_ desc
