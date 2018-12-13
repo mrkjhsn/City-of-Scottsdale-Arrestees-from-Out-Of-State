@@ -17,6 +17,7 @@ from
 		where [City of Arrestee] not like '%, AZ %' and --AZ arrestees excluded
 			  [City of Arrestee] not like '%Glendale%' and --strips out "City of Arrestee" values that only include "Glendale" without AZ at end
 			  [City of Arrestee] not like '%Phoenix%' and  --strips out "City of Arrestee" values that only include "Phoenix" without AZ at end
+			  [City of Arrestee] not like '%Tempe%' and
 			  [City of Arrestee] not like ',%' --strips out "City of Arrestee" values that only include "," without AZ at end
 		) as A
 where [City of Arrestee] is not null  --originally I had this included within the "from" statement above, but that wasn't excluding nulls since it was checking against a calculated field
