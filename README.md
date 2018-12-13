@@ -10,5 +10,5 @@ Each year the City of Scottsdale publishes a [visitor research report](https://w
 3. Washington isn't even in the top 10 states that contribute visitors to Scottsdale, but it ranks number 4 on the list of arrestees.
 
 #### Next Steps:
-1. The Scottsdale Visitor Report also includes information that includes the top 13 cities that contributed visitors to AZ.  Analize this against cities of arrestees.
-2. Make a map showing areas of concentration at cities that have contributed visitors to Scottsdale that have been arrested.
+~~1. The Scottsdale Visitor Report also includes information that includes the top 13 cities that contributed visitors to AZ.  Analize this against cities of arrestees.~~
+~~2. Make a map showing areas of concentration at cities that have contributed visitors to Scottsdale that have been arrested.~~
