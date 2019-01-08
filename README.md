@@ -5,6 +5,8 @@ While exploring the City of Scottsdale Police Department [arrest dataset](http:/
 Each year the City of Scottsdale publishes a [visitor research report](https://www.scottsdaleaz.gov/Assets/ScottsdaleAZ/Tourism+Reports/2018+Visitor+Report+Longwoods.pdf), which includes the top 10 states that contribute visitors to Scottsdale.  
 
 #### Results:
+
+Overall the percentages of visitors from various states and the percent of people being arrested from those states aligned.  However:
 1. Colorado contributes the 2nd most visitors from out of state, but it ranks 6th in terms of states of residence for people who have been arrested in Scottsdale.  
 2. New York contributes the 4th largest number of visitors, but it's 10th on the list of arrestees.  
 3. Washington isn't even in the top 10 states that contribute visitors to Scottsdale, but it ranks number 4 on the list of arrestees.
