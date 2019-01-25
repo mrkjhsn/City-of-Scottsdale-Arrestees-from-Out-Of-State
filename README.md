@@ -14,6 +14,7 @@ Overall the percentages of visitors from various states and the percent of peopl
 #### Next Steps:
 
 ~~1. The Scottsdale Visitor Report also includes information that includes the top 13 cities that contributed visitors to AZ.  Analize this against cities of arrestees.~~
+
 ~~2. Make a map showing areas of concentration at cities that have contributed visitors to Scottsdale that have been arrested.~~
  
  3. Explore how these percentages change from year to year.  Currently, the City of Scottsdale doesn't provide year over year data.
