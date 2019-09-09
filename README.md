@@ -1,6 +1,6 @@
 ## City of Scottsdale Arrestees from Other States
 
-While exploring the City of Scottsdale Police Department [arrest dataset](http://data.scottsdaleaz.gov/dataset/police-departmental-arrest-data)* I noticed the City, State, and Zip are included for each person arrested.  This motivated me to analyze the relationship between out of state arrestees in Scottsdale versus the percent of visitors to Scottsdale from various states.  Each year the City of Scottsdale publishes a [visitor research report](https://www.scottsdaleaz.gov/Assets/ScottsdaleAZ/Tourism+Reports/2018+Visitor+Report+Longwoods.pdf), which includes the top 10 states that contribute visitors to Scottsdale.  
+While exploring the City of Scottsdale Police Department [arrest dataset](http://data.scottsdaleaz.gov/dataset/police-departmental-arrest-data)* I noticed the City, State, and Zip are included for each person arrested.  This motivated me to analyze the relationship between out of state arrestees in Scottsdale versus the percent of visitors to Scottsdale from various states.  Each year the City of Scottsdale publishes a [visitor research report](https://www.scottsdaleaz.gov/Assets/ScottsdaleAZ/Tourism+Reports/2019+Visitor+Report+Longwoods.pdf), which includes the top 10 states that contribute visitors to Scottsdale.  
 
 In addition to using SQL for the quantitative analysis.  I used an ArcGIS feature in PowerBI to develop cluster maps in order to visually show the states and cities of people who have been arrested in Scottsdale.
 
